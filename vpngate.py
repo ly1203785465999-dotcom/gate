@@ -51,7 +51,7 @@ VPNGATE_MIRROR = os.environ.get(
     "https://raw.githubusercontent.com/fdciabdul/Vpngate-Scraper-API/main/json/data.json",
 )
 # 已部署的 Cloudflare Worker 检测接口 (GET /check?proxyip=host:port, 实测确认)
-WORKER_CHECK_URL = os.environ.get("CHECK_WORKER", "https://check.helei.kdns.fr/check?sstp=vpn:vpn@")
+WORKER_CHECK_URL = os.environ.get("CHECK_WORKER", "https://vpn.ly1.kdns.fr/check?sstp=vpn:vpn@")
 CONCURRENCY = max(1, int(os.environ.get("CHECK_CONCURRENCY", "32")))   # 与 Worker 网页端一致的并发模型
 CHECK_TIMEOUT = float(os.environ.get("CHECK_TIMEOUT", "90"))          # 单请求客户端超时 (秒)
 MAX_CHECK_NODES = int(os.environ.get("MAX_CHECK_NODES", "0"))         # 0=不限; 本地测试可设小值
@@ -460,8 +460,29 @@ EDGE_HOSTS = [
     h.strip()
     for h in os.environ.get(
         "EDGE_HOSTS",
-        "saas.072159.xyz:443,hzytjy.cn:443,ali.nonull.pp.ua:443,auto.dolby.dpdns.org:443,"
-        "cdn.cnno.de:443,saas.sin.fan:443,cf.777791.xyz:443",
+                    "cf.1o.ee:443,vps.cheng2001.top:443,224322.xyz:443,www.mfyx.cn:443,cf.877774.xyz:443,"
+            "ikankeji.com:443,saas.072159.xyz:443,funko.com:443,stores.staples.com:443,www.deepl.com:443,"
+            "www.bis.gov:443,prizepicks.com:443,auto.dolby.dpdns.org:443,mail.notion.com:443,"
+            "staticdelivery.nexusmods.com:443,www.akasantech.com:443,hzytjy.cn:443,www.zendesk.com:443,"
+            "www.vastnovel.com:443,securecircle.com:443,www.broadcom.com:443,cf-cname.xingpingcn.top:443,"
+            "www.xiaoshuofen.com:443,img.css.sd:443,www.blibli.com:443,fn.130519.xyz:443,cf.itv888.cn:443,"
+            "neko.cloudflaree.eu.org:443,cf.yj250.bond:443,53.fs1.hubspotusercontent-na1.net:443,"
+            "www.people.inc:443,jobsdb.com:443,www.giannidelprete.it:443,clickhouse.com:443,"
+            "spirol.com:443,nodejs.org:443,www.trumpgolf.com:443,www.lbl.gov:443,cdn.204910.best:443,"
+            "www.vmware.com:443,newsroom.avalara.com:443,absen.com:443,www.speedtest.net:443,kick.com:443,"
+            "hsl.upstate.edu:443,cozylife.app:443,www.epicgames.com:443,www.revechat.com:443,"
+            "s.bookcdn.com:443,www.spacex.com:443,rocketreach.co:443,kaspa.stream:443,www.npmjs.com:443,"
+            "www.doiting.com:443,dev.graco.com:443,cf.777791.xyz:443,db-ip.com:443,deepseek.com.hk:443,"
+            "cf.drxian.dpdns.org:443,skk.moe:443,smapi.xystem138.com:443,help.kolet.com:443,"
+            "griditapp.com:443,store.rg-adguard.net:443,builtbybuffalo.com:443,dl.macked.app:443,"
+            "zen-browser.app:443,servo.org:443,www2.rarbggo.to:443,www.libvio.site:443,time.is:443,"
+            "garuda-indonesia.com:443,www.transgenderdor.org:443,www.proxyrarbg.to:443,www.apnic.net:443,"
+            "t.213891.xyz:443,www.visa.com.au:443,www.visa.com.sg:443,oxylabs.io:443,example.com:443,"
+            "cdn.tzpro.xyz:443,yong.880805.xyz:443,9mod.com:443,nodeloc.cc:443,cdnjs.com:443,"
+            "baota.us.kg:443,www.ventusky.com:443,duggal.com:443,pttime.org:443,duckybot.xyz:443,"
+            "cf.468123.xyz:443,hitcon.org:443,mokeedev.com:443,helium.computer:443,grass.io:443,"
+            "japan.com:443,www.4429.com.cn:443,singapore.com:443,wallpaperflare.com:443,eii.at:443,"
+            "nist.gov:443,www.sage.com:443",
     ).split(",")
     if h.strip()
 ]
